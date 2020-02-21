@@ -779,7 +779,7 @@ boxUncheckedTennis.contentMode = .scaleAspectFit
 
 boxUncheckedWeight = UIButton()
 boxUncheckedWeight.frame = CGRect(x: 373, y: 105, width: 28, height: 28)
-boxUncheckedTennis.addTarget(self, action: #selector(weightBoxClicked), for: .touchUpInside)
+boxUncheckedWeight.addTarget(self, action: #selector(weightBoxClicked), for: .touchUpInside)
                         slideupView.addSubview(boxUncheckedWeight)
 boxUncheckedWeight.topAnchor.constraint(equalTo: slideupView.topAnchor, constant: 80).isActive = true
 boxUncheckedWeight.rightAnchor.constraint(equalTo: slideupView.rightAnchor, constant: 30).isActive = true
