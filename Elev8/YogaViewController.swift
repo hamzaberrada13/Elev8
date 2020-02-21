@@ -57,7 +57,7 @@ class YogaViewController: UIViewController {
     var boxUncheckedWeight: UIButton!
     var boxCheckedWeight: UIButton!
     
-    var boxUncheckedCrossFit: UIButton!
+    var boxUncheckedCrossfit: UIButton!
     var boxCheckedCrossfit: UIButton!
     
     var boxUncheckedBoxing: UIButton!
@@ -87,12 +87,19 @@ class YogaViewController: UIViewController {
     
     var location: Gym?
     
-    var checked: String!
-    var unchecked: String!
+    var checked = "baseline_check_box_white_18pt_2x"
+    var  unchecked = "baseline_check_box_outline_blank_white_18pt_2x"
     
     var counterGuessPass: Int! = 0
     var counterYoga: Int! = 0
     var counterPilates: Int! = 0
+    var counterSpin: Int! = 0
+    var counterBasketball: Int! = 0
+    var counterVolleyball: Int! = 0
+    var counterTennis: Int! = 0
+    var counterWeight: Int! = 0
+    var counterCrossfit: Int! = 0
+    var counterBoxing: Int! = 0
     
     
     // MARK: - Properties
@@ -221,10 +228,6 @@ class YogaViewController: UIViewController {
     @objc func guestPassBoxClicked(sender: UIButton!) {
         
         print("clicking the button")
-        checked = "baseline_check_box_white_18pt_2x"
-        unchecked = "baseline_check_box_outline_blank_white_18pt_2x"
-        
-        //counter = 0
         if counterGuessPass % 2 == 0 {
             boxUncheckedGuestPass.setImage(#imageLiteral(resourceName: checked).withRenderingMode(.alwaysOriginal), for: .normal)
             counterGuessPass = counterGuessPass + 1
@@ -235,12 +238,12 @@ class YogaViewController: UIViewController {
                     counterGuessPass = counterGuessPass + 1
                 print(counterGuessPass!)
             }
-        
-      //  boxUncheckedGuestPass.setImage(#imageLiteral(resourceName: checked).withRenderingMode(.alwaysOriginal), for: .normal)
-      //  boxUncheckedGuestPass.setImage(#imageLiteral(resourceName: "baseline_check_box_white_18pt_2x").withRenderingMode(.alwaysOriginal), for: .normal)
+
     }
+    
     @objc func yogaBoxClicked(sender: UIButton!) {
         print("yooooooogaaaaaaaaaaaa")
+         
         if counterYoga % 2 == 0 {
               boxUncheckedYoga.setImage(#imageLiteral(resourceName: checked).withRenderingMode(.alwaysOriginal), for: .normal)
               counterYoga = counterYoga + 1
@@ -268,6 +271,118 @@ class YogaViewController: UIViewController {
                  }
            
        }
+    
+    @objc func spinBoxClicked(sender: UIButton!) {
+            print("pilaaaaaa")
+            if counterSpin % 2 == 0 {
+         boxUncheckedSpin.setImage(#imageLiteral(resourceName: checked).withRenderingMode(.alwaysOriginal), for: .normal)
+                  counterSpin = counterSpin + 1
+              print(boxUncheckedSpin!)
+              }
+                  else {
+                      boxUncheckedSpin.setImage(#imageLiteral(resourceName: unchecked).withRenderingMode(.alwaysOriginal), for: .normal)
+                          counterSpin = counterSpin + 1
+                      print(counterPilates!)
+                  }
+            
+        }
+    
+    @objc func basketballBoxClicked(sender: UIButton!) {
+           
+            if counterBasketball % 2 == 0 {
+         boxUncheckedBasketball.setImage(#imageLiteral(resourceName: checked).withRenderingMode(.alwaysOriginal), for: .normal)
+                  counterBasketball = counterBasketball + 1
+              
+              }
+                  else {
+            boxUncheckedBasketball.setImage(#imageLiteral(resourceName: unchecked).withRenderingMode(.alwaysOriginal), for: .normal)
+                          counterBasketball = counterBasketball + 1
+                      
+                  }
+            
+        }
+    
+    @objc func volleyballBoxClicked(sender: UIButton!) {
+            
+            if counterVolleyball % 2 == 0 {
+         boxUncheckedVolleyball.setImage(#imageLiteral(resourceName: checked).withRenderingMode(.alwaysOriginal), for: .normal)
+                  counterVolleyball = counterVolleyball + 1
+              
+              }
+                  else {
+                      boxUncheckedVolleyball.setImage(#imageLiteral(resourceName: unchecked).withRenderingMode(.alwaysOriginal), for: .normal)
+                          counterVolleyball = counterVolleyball + 1
+                      
+                  }
+            
+        }
+    
+    
+    @objc func tennisBoxClicked(sender: UIButton!) {
+              print("this is tenniiiiis")
+              if counterTennis % 2 == 0 {
+           boxUncheckedTennis.setImage(#imageLiteral(resourceName: checked).withRenderingMode(.alwaysOriginal), for: .normal)
+                    counterTennis = counterTennis + 1
+                
+                }
+                    else {
+                        boxUncheckedTennis.setImage(#imageLiteral(resourceName: unchecked).withRenderingMode(.alwaysOriginal), for: .normal)
+                            counterTennis = counterTennis + 1
+                        
+                    }
+              
+          }
+    
+    
+    
+    @objc func weightBoxClicked(sender: UIButton!) {
+               print("this is weeeeight")
+        if counterWeight % 2 == 0 {
+           boxUncheckedWeight.setImage(#imageLiteral(resourceName: checked).withRenderingMode(.alwaysOriginal), for: .normal)
+                    counterWeight = counterWeight + 1
+                
+                }
+                    else {
+                        boxUncheckedWeight.setImage(#imageLiteral(resourceName: unchecked).withRenderingMode(.alwaysOriginal), for: .normal)
+                            counterWeight = counterWeight + 1
+                        
+                    }
+              
+          }
+    
+    
+    @objc func crossfitBoxClicked(sender: UIButton!) {
+               print("this is croossfeeet")
+        
+        if counterCrossfit % 2 == 0 {
+           boxUncheckedCrossfit.setImage(#imageLiteral(resourceName: checked).withRenderingMode(.alwaysOriginal), for: .normal)
+                    counterCrossfit = counterCrossfit + 1
+                
+                }
+                    else {
+                        boxUncheckedVolleyball.setImage(#imageLiteral(resourceName: unchecked).withRenderingMode(.alwaysOriginal), for: .normal)
+                            counterCrossfit = counterCrossfit + 1
+                        
+                    }
+              print(counterCrossfit!)
+          }
+    
+    @objc func boxingBoxClicked(sender: UIButton!) {
+              
+              if counterBoxing % 2 == 0 {
+           boxUncheckedBoxing.setImage(#imageLiteral(resourceName: checked).withRenderingMode(.alwaysOriginal), for: .normal)
+                    counterBoxing = counterBoxing + 1
+                
+                }
+                    else {
+                        boxUncheckedBoxing.setImage(#imageLiteral(resourceName: unchecked).withRenderingMode(.alwaysOriginal), for: .normal)
+                            counterBoxing = counterBoxing + 1
+                        
+                    }
+              
+          }
+    
+    
 //    func showWebpage(at address: String) {
 //        if let url = URL(string:address){
 //            let config = SFSafariViewController.Configuration()
@@ -592,33 +707,109 @@ class YogaViewController: UIViewController {
         
 
         
-        boxUncheckedGuestPass = UIButton()
-         boxUncheckedGuestPass.frame = CGRect(x: 15, y: 76, width: 28, height: 28)
-         boxUncheckedGuestPass.addTarget(self, action: #selector(guestPassBoxClicked), for: .touchUpInside)
+boxUncheckedGuestPass = UIButton()
+boxUncheckedGuestPass.frame = CGRect(x: 15, y: 76, width: 28, height: 28)
+boxUncheckedGuestPass.addTarget(self, action: #selector(guestPassBoxClicked), for: .touchUpInside)
          slideupView.addSubview(boxUncheckedGuestPass)
-         boxUncheckedGuestPass.topAnchor.constraint(equalTo: slideupView.topAnchor, constant: 80).isActive = true
-         boxUncheckedGuestPass.leftAnchor.constraint(equalTo: slideupView.leftAnchor, constant: 30).isActive = true
-         boxUncheckedGuestPass.setImage(#imageLiteral(resourceName: "baseline_check_box_outline_blank_white_18pt_2x").withRenderingMode(.alwaysOriginal), for: .normal)
-        boxUncheckedGuestPass.contentMode = .scaleAspectFit
+boxUncheckedGuestPass.topAnchor.constraint(equalTo: slideupView.topAnchor, constant: 80).isActive = true
+boxUncheckedGuestPass.leftAnchor.constraint(equalTo: slideupView.leftAnchor, constant: 30).isActive = true
+boxUncheckedGuestPass.setImage(#imageLiteral(resourceName: "baseline_check_box_outline_blank_white_18pt_2x").withRenderingMode(.alwaysOriginal), for: .normal)
+boxUncheckedGuestPass.contentMode = .scaleAspectFit
         
      
-        boxUncheckedYoga = UIButton()
-                boxUncheckedYoga.frame = CGRect(x: 15, y: 105, width: 28, height: 28)
-                boxUncheckedYoga.addTarget(self, action: #selector(yogaBoxClicked), for: .touchUpInside)
+boxUncheckedYoga = UIButton()
+boxUncheckedYoga.frame = CGRect(x: 15, y: 105, width: 28, height: 28)
+boxUncheckedYoga.addTarget(self, action: #selector(yogaBoxClicked), for: .touchUpInside)
                 slideupView.addSubview(boxUncheckedYoga)
-                boxUncheckedYoga.topAnchor.constraint(equalTo: slideupView.topAnchor, constant: 80).isActive = true
-                boxUncheckedYoga.leftAnchor.constraint(equalTo: slideupView.leftAnchor, constant: 30).isActive = true
-                boxUncheckedYoga.setImage(#imageLiteral(resourceName: "baseline_check_box_outline_blank_white_18pt_2x").withRenderingMode(.alwaysOriginal), for: .normal)
-               boxUncheckedYoga.contentMode = .scaleAspectFit
+boxUncheckedYoga.topAnchor.constraint(equalTo: slideupView.topAnchor, constant: 80).isActive = true
+boxUncheckedYoga.leftAnchor.constraint(equalTo: slideupView.leftAnchor, constant: 30).isActive = true
+boxUncheckedYoga.setImage(#imageLiteral(resourceName: "baseline_check_box_outline_blank_white_18pt_2x").withRenderingMode(.alwaysOriginal), for: .normal)
+boxUncheckedYoga.contentMode = .scaleAspectFit
         
-        boxUncheckedPilates = UIButton()
-                   boxUncheckedPilates.frame = CGRect(x: 15, y: 145, width: 28, height: 28)
-                   boxUncheckedPilates.addTarget(self, action: #selector(pilatesBoxClicked), for: .touchUpInside)
+        
+boxUncheckedPilates = UIButton()
+boxUncheckedPilates.frame = CGRect(x: 15, y: 134, width: 28, height: 28)
+boxUncheckedPilates.addTarget(self, action: #selector(pilatesBoxClicked), for: .touchUpInside)
                    slideupView.addSubview(boxUncheckedPilates)
-                   boxUncheckedPilates.topAnchor.constraint(equalTo: slideupView.topAnchor, constant: 80).isActive = true
-                   boxUncheckedPilates.leftAnchor.constraint(equalTo: slideupView.leftAnchor, constant: 30).isActive = true
-                   boxUncheckedPilates.setImage(#imageLiteral(resourceName: "baseline_check_box_outline_blank_white_18pt_2x").withRenderingMode(.alwaysOriginal), for: .normal)
-                  boxUncheckedPilates.contentMode = .scaleAspectFit
+boxUncheckedPilates.topAnchor.constraint(equalTo: slideupView.topAnchor, constant: 80).isActive = true
+boxUncheckedPilates.leftAnchor.constraint(equalTo: slideupView.leftAnchor, constant: 30).isActive = true
+boxUncheckedPilates.setImage(#imageLiteral(resourceName: "baseline_check_box_outline_blank_white_18pt_2x").withRenderingMode(.alwaysOriginal), for: .normal)
+boxUncheckedPilates.contentMode = .scaleAspectFit
+        
+        
+boxUncheckedSpin = UIButton()
+boxUncheckedSpin.frame = CGRect(x: 15, y: 163, width: 28, height: 28)
+boxUncheckedSpin.addTarget(self, action: #selector(spinBoxClicked), for: .touchUpInside)
+                           slideupView.addSubview(boxUncheckedSpin)
+boxUncheckedSpin.topAnchor.constraint(equalTo: slideupView.topAnchor, constant: 80).isActive = true
+boxUncheckedSpin.leftAnchor.constraint(equalTo: slideupView.leftAnchor, constant: 30).isActive = true
+boxUncheckedSpin.setImage(#imageLiteral(resourceName: "baseline_check_box_outline_blank_white_18pt_2x").withRenderingMode(.alwaysOriginal), for: .normal)
+boxUncheckedSpin.contentMode = .scaleAspectFit
+        
+        
+boxUncheckedBasketball = UIButton()
+boxUncheckedBasketball.frame = CGRect(x: 15, y: 192, width: 28, height: 28)
+boxUncheckedBasketball.addTarget(self, action: #selector(basketballBoxClicked), for: .touchUpInside)
+                        slideupView.addSubview(boxUncheckedBasketball)
+boxUncheckedBasketball.topAnchor.constraint(equalTo: slideupView.topAnchor, constant: 80).isActive = true
+boxUncheckedBasketball.leftAnchor.constraint(equalTo: slideupView.leftAnchor, constant: 30).isActive = true
+boxUncheckedBasketball.setImage(#imageLiteral(resourceName: "baseline_check_box_outline_blank_white_18pt_2x").withRenderingMode(.alwaysOriginal), for: .normal)
+boxUncheckedBasketball.contentMode = .scaleAspectFit
+        
+        
+boxUncheckedVolleyball = UIButton()
+boxUncheckedVolleyball.frame = CGRect(x: 15, y: 225, width: 28, height: 28)
+boxUncheckedVolleyball.addTarget(self, action: #selector(volleyballBoxClicked), for: .touchUpInside)
+                        slideupView.addSubview(boxUncheckedVolleyball)
+boxUncheckedVolleyball.topAnchor.constraint(equalTo: slideupView.topAnchor, constant: 80).isActive = true
+boxUncheckedVolleyball.leftAnchor.constraint(equalTo: slideupView.leftAnchor, constant: 30).isActive = true
+boxUncheckedVolleyball.setImage(#imageLiteral(resourceName: "baseline_check_box_outline_blank_white_18pt_2x").withRenderingMode(.alwaysOriginal), for: .normal)
+boxUncheckedVolleyball.contentMode = .scaleAspectFit
+        
+        
+boxUncheckedTennis = UIButton()
+boxUncheckedTennis.frame = CGRect(x: 373, y: 76, width: 28, height: 28)
+boxUncheckedTennis.addTarget(self, action: #selector(tennisBoxClicked), for: .touchUpInside)
+                        slideupView.addSubview(boxUncheckedTennis)
+boxUncheckedTennis.topAnchor.constraint(equalTo: slideupView.topAnchor, constant: 80).isActive = true
+boxUncheckedTennis.rightAnchor.constraint(equalTo: slideupView.rightAnchor, constant: 30).isActive = true
+boxUncheckedTennis.setImage(#imageLiteral(resourceName: "baseline_check_box_outline_blank_white_18pt_2x").withRenderingMode(.alwaysOriginal), for: .normal)
+boxUncheckedTennis.contentMode = .scaleAspectFit
+        
+
+boxUncheckedWeight = UIButton()
+boxUncheckedWeight.frame = CGRect(x: 373, y: 105, width: 28, height: 28)
+boxUncheckedTennis.addTarget(self, action: #selector(weightBoxClicked), for: .touchUpInside)
+                        slideupView.addSubview(boxUncheckedWeight)
+boxUncheckedWeight.topAnchor.constraint(equalTo: slideupView.topAnchor, constant: 80).isActive = true
+boxUncheckedWeight.rightAnchor.constraint(equalTo: slideupView.rightAnchor, constant: 30).isActive = true
+boxUncheckedWeight.setImage(#imageLiteral(resourceName: "baseline_check_box_outline_blank_white_18pt_2x").withRenderingMode(.alwaysOriginal), for: .normal)
+boxUncheckedWeight.contentMode = .scaleAspectFit
+        
+        
+boxUncheckedCrossfit = UIButton()
+boxUncheckedCrossfit.frame = CGRect(x: 373, y: 134, width: 28, height: 28)
+boxUncheckedCrossfit.addTarget(self, action: #selector(crossfitBoxClicked), for: .touchUpInside)
+                    slideupView.addSubview(boxUncheckedCrossfit)
+boxUncheckedCrossfit.topAnchor.constraint(equalTo: slideupView.topAnchor, constant: 80).isActive = true
+boxUncheckedCrossfit.rightAnchor.constraint(equalTo: slideupView.rightAnchor, constant: 30).isActive = true
+boxUncheckedCrossfit.setImage(#imageLiteral(resourceName: "baseline_check_box_outline_blank_white_18pt_2x").withRenderingMode(.alwaysOriginal), for: .normal)
+boxUncheckedCrossfit.contentMode = .scaleAspectFit
+        
+        
+boxUncheckedBoxing = UIButton()
+boxUncheckedBoxing.frame = CGRect(x: 373, y: 163, width: 28, height: 28)
+boxUncheckedBoxing.addTarget(self, action: #selector(boxingBoxClicked), for: .touchUpInside)
+                    slideupView.addSubview(boxUncheckedBoxing)
+boxUncheckedBoxing.topAnchor.constraint(equalTo: slideupView.topAnchor, constant: 80).isActive = true
+boxUncheckedBoxing.rightAnchor.constraint(equalTo: slideupView.rightAnchor, constant: 30).isActive = true
+boxUncheckedBoxing.setImage(#imageLiteral(resourceName: "baseline_check_box_outline_blank_white_18pt_2x").withRenderingMode(.alwaysOriginal), for: .normal)
+boxUncheckedBoxing.contentMode = .scaleAspectFit
+        
+        
+        
+        
+        
        // slideupView.addSubview(boxUncheckedGuestPass)
         
         /*
