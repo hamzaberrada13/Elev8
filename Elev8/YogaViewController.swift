@@ -46,29 +46,31 @@ class YogaViewController: UIViewController {
 //    var boxCheckedSpin: UIButton!
     
     var boxUncheckedBasketball: UIButton!
-    var boxcheckedBasketball: UIButton!
+//    var boxcheckedBasketball: UIButton!
     
     var boxUncheckedVolleyball: UIButton!
-    var boxCheckedVolleyball: UIButton!
+//    var boxCheckedVolleyball: UIButton!
     
     var boxUncheckedTennis: UIButton!
-    var boxCheckedTennis: UIButton!
+ //   var boxCheckedTennis: UIButton!
     
     var boxUncheckedWeight: UIButton!
-    var boxCheckedWeight: UIButton!
+  //  var boxCheckedWeight: UIButton!
     
     var boxUncheckedCrossfit: UIButton!
-    var boxCheckedCrossfit: UIButton!
+  //  var boxCheckedCrossfit: UIButton!
     
     var boxUncheckedBoxing: UIButton!
-    var boxCheckedBoxing: UIButton!
+//    var boxCheckedBoxing: UIButton!
     
     var numberButton: UIButton!
     var websiteButton: UIButton!
     var directionButton: UIButton!
+    var applyFilterButton: UIButton!
     var dragImage: UIImageView!
     
-    var filterBy: UILabel!
+    
+ 
     var requiresMembership: UILabel!
     var yogaLabel: UILabel!
     var pilatesLabel: UILabel!
@@ -90,7 +92,7 @@ class YogaViewController: UIViewController {
     var checked = "baseline_check_box_white_18pt_2x"
     var  unchecked = "baseline_check_box_outline_blank_white_18pt_2x"
     
-    var counterGuessPass: Int! = 0
+    var counterGuestPass: Int! = 0
     var counterYoga: Int! = 0
     var counterPilates: Int! = 0
     var counterSpin: Int! = 0
@@ -228,15 +230,15 @@ class YogaViewController: UIViewController {
     @objc func guestPassBoxClicked(sender: UIButton!) {
         
         print("clicking the button")
-        if counterGuessPass % 2 == 0 {
+        if counterGuestPass % 2 == 0 {
             boxUncheckedGuestPass.setImage(#imageLiteral(resourceName: checked).withRenderingMode(.alwaysOriginal), for: .normal)
-            counterGuessPass = counterGuessPass + 1
-        print(counterGuessPass!)
+            counterGuestPass = counterGuestPass + 1
+       // print(counterGuessPass!)
         }
             else {
                 boxUncheckedGuestPass.setImage(#imageLiteral(resourceName: unchecked).withRenderingMode(.alwaysOriginal), for: .normal)
-                    counterGuessPass = counterGuessPass + 1
-                print(counterGuessPass!)
+                    counterGuestPass = counterGuestPass + 1
+              //  print(counterGuessPass!)
             }
 
     }
@@ -383,6 +385,18 @@ class YogaViewController: UIViewController {
           }
     
     
+    @objc func applyFilterClicked(sender: UIButton!) {
+              
+    print(counterGuestPass)
+        if counterGuestPass % 2 == 0 {
+            print("Don't show")
+        }
+        else {
+        print("show guest pass")
+        }
+          }
+    
+    
 //    func showWebpage(at address: String) {
 //        if let url = URL(string:address){
 //            let config = SFSafariViewController.Configuration()
@@ -427,13 +441,19 @@ class YogaViewController: UIViewController {
                 let places = try JSONDecoder().decode([Place].self, from: data)
 
              
+                print("stop")
+                
                 for place in places {
                     
                     
                     let sampleStarbucks = Gym(title: place.name, locationName: place.address, coordinate: CLLocationCoordinate2D(latitude: place.lat, longitude: place.long), number: place.number, website: place.website, logo: place.logo, lat: place.lat, long: place.long)
                     
+                  
                     self.mapView.addAnnotations([sampleStarbucks])
                     
+//                    if place.name == "Soul Cycle" {                             self.mapView.view(for: [sampleStarbucks])?.isHidden = true
+//                                      }
+                    //self.mapView.view(for: sampleStarbucks)!.isHidden = true
                 }
 
             } catch let jsonErr{
@@ -552,18 +572,18 @@ class YogaViewController: UIViewController {
         directionButton.contentMode = .scaleAspectFit
         
         
-        filterBy = UILabel(frame: CGRect(x: 83, y: 30, width: 105, height: 45))
-//
-        slideupView.addSubview(filterBy)
-        filterBy.text = "Filter By:"
-        filterBy.textColor = UIColor.white
-       filterBy.translatesAutoresizingMaskIntoConstraints = false
-        filterBy.font.withSize(25)
-        filterBy.textAlignment = .center
-//
-        filterBy.topAnchor.constraint(equalTo: slideupView.topAnchor, constant:50).isActive = true
-        filterBy.leftAnchor.constraint(equalTo: slideupView.leftAnchor, constant: 10).isActive = true
-        filterBy.adjustsFontSizeToFitWidth = true
+//        filterBy = UILabel(frame: CGRect(x: 83, y: 30, width: 105, height: 45))
+////
+//        slideupView.addSubview(filterBy)
+//        filterBy.text = "Filter By:"
+//        filterBy.textColor = UIColor.white
+//       filterBy.translatesAutoresizingMaskIntoConstraints = false
+//        filterBy.font.withSize(25)
+//        filterBy.textAlignment = .center
+////
+//        filterBy.topAnchor.constraint(equalTo: slideupView.topAnchor, constant:50).isActive = true
+//        filterBy.leftAnchor.constraint(equalTo: slideupView.leftAnchor, constant: 10).isActive = true
+//        filterBy.adjustsFontSizeToFitWidth = true
 
         
                 requiresMembership = UILabel(frame: CGRect(x: 83, y: 30, width: 105, height: 45))
@@ -703,6 +723,7 @@ class YogaViewController: UIViewController {
         boxingLabel.topAnchor.constraint(equalTo: slideupView.topAnchor, constant:170).isActive = true
         boxingLabel.rightAnchor.constraint(equalTo: slideupView.rightAnchor, constant: -50).isActive = true
         boxingLabel.adjustsFontSizeToFitWidth = true
+        
 //        websiteLabel.isHidden = false
         
 
@@ -765,6 +786,18 @@ boxUncheckedVolleyball.topAnchor.constraint(equalTo: slideupView.topAnchor, cons
 boxUncheckedVolleyball.leftAnchor.constraint(equalTo: slideupView.leftAnchor, constant: 30).isActive = true
 boxUncheckedVolleyball.setImage(#imageLiteral(resourceName: "baseline_check_box_outline_blank_white_18pt_2x").withRenderingMode(.alwaysOriginal), for: .normal)
 boxUncheckedVolleyball.contentMode = .scaleAspectFit
+        
+        
+        applyFilterButton = UIButton()
+        applyFilterButton.frame = CGRect(x: 100, y: 270, width: 200, height: 50)
+        applyFilterButton.addTarget(self, action: #selector(applyFilterClicked), for: .touchUpInside)
+                                slideupView.addSubview(applyFilterButton)
+        applyFilterButton.topAnchor.constraint(equalTo: slideupView.topAnchor, constant: 80).isActive = true
+        applyFilterButton.leftAnchor.constraint(equalTo: slideupView.leftAnchor, constant: 30).isActive = true
+       // applyFilterButton.setImage(#imageLiteral(resourceName: "baseline_check_box_outline_blank_white_18pt_2x").withRenderingMode(.alwaysOriginal), for: .normal)
+        applyFilterButton.contentMode = .scaleAspectFit
+        applyFilterButton.setTitle("Apply filters", for: .normal)
+        
         
         
 boxUncheckedTennis = UIButton()
