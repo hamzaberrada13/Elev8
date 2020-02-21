@@ -34,16 +34,16 @@ class YogaViewController: UIViewController {
     var calloutLogo: UIImageView!
     
     var boxUncheckedGuestPass: UIButton!
-    var boxCheckedGuestPass: UIButton!
+    //var boxCheckedGuestPass: UIButton!
     
     var boxUncheckedYoga: UIButton!
-    var boxCheckedYoga: UIButton!
+ //   var boxCheckedYoga: UIButton!
 
     var boxUncheckedPilates: UIButton!
-    var boxCheckedPilates: UIButton!
+//    var boxCheckedPilates: UIButton!
     
     var boxUncheckedSpin: UIButton!
-    var boxCheckedSpin: UIButton!
+//    var boxCheckedSpin: UIButton!
     
     var boxUncheckedBasketball: UIButton!
     var boxcheckedBasketball: UIButton!
@@ -360,7 +360,7 @@ class YogaViewController: UIViewController {
                 
                 }
                     else {
-                        boxUncheckedVolleyball.setImage(#imageLiteral(resourceName: unchecked).withRenderingMode(.alwaysOriginal), for: .normal)
+                        boxUncheckedCrossfit.setImage(#imageLiteral(resourceName: unchecked).withRenderingMode(.alwaysOriginal), for: .normal)
                             counterCrossfit = counterCrossfit + 1
                         
                     }
